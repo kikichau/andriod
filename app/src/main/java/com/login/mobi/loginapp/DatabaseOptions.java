@@ -21,4 +21,20 @@ public class DatabaseOptions {
                     EMAIL + " TEXT NOT NULL," +
                     PASSWORD + " TEXT );";
 
+    public static final String DIARY_TABLE = "diary";
+
+    public static final String DID = "did";
+    public static final String DATE = "date";
+    public static final String TITLE = "title";
+    public static final String ADDRESS = "address";
+    public static final String TEXT = "text";
+
+    public static final String CREATE_DIARY_TABLE_ =
+            "CREATE TABLE  " + DIARY_TABLE + "(" +
+                    DID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    DATE + " TEXT NOT NULL," +
+                    TITLE + "TEXT," +
+                    ADDRESS + "TEXT," +
+                    TEXT + " TEXT );";
+
 }

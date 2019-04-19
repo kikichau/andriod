@@ -21,6 +21,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         //Create table
         db.execSQL(DatabaseOptions.CREATE_USERS_TABLE_);
+        db.execSQL(DatabaseOptions.CREATE_DIARY_TABLE_);
     }
 
     @Override
