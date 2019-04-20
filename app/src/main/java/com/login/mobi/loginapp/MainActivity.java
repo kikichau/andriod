@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btSignIn;
     private Button btSignUp;
+    private Button btAddDiary;
     private EditText edtEmail;
     private EditText edtPassword;
 
@@ -26,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
         btSignIn = findViewById(R.id.btSignIn);
         btSignUp = findViewById(R.id.btSignUp);
+        btAddDiary = findViewById(R.id.btAddDiary);
 
         edtEmail = findViewById(R.id.emailinput);
         edtPassword = findViewById(R.id.passwordinput);
