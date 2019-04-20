@@ -1,9 +1,5 @@
 package com.login.mobi.loginapp;
 
-/**
- * Created by Zoom on 10/1/2018.
- */
-
 public class User {
 
     private int id;

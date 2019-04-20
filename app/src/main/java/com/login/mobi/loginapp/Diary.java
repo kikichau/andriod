@@ -1,45 +1,67 @@
 package com.login.mobi.loginapp;
 
 public class Diary {
-    private int id;
-    private String email;
-    private  String password;
+    private int did;
+    private String date;
+    private  String title;
+    private String address;
+    private String text;
 
-    public User(String email, String password) {
-        this.email = email;
-        this.password = password;
+    public Diary(String date, String title, String address, String text) {
+        this.date = date;
+        this.title = title;
+        this.address = address;
+        this.text = text;
     }
 
-    public int getId() {
-        return id;
+    public int getDid() {
+        return did;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setDid(int did) {
+        this.did = did;
     }
 
-    public String getEmail() {
-        return email;
+    public String getDate() {
+        return date;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setDate(String date) {
+        this.date = date;
     }
 
-    public String getPassword() {
-        return password;
+    public String getTitle() {
+        return title;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
     }
 
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
+                "did=" + did +
+                ", date='" + date + '\'' +
+                ", title='" + title + '\'' +
+                ", address='" + address + '\'' +
+                ", text='" + text + '\'' +
                 '}';
     }
 }

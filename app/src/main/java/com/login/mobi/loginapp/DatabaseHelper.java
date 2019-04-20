@@ -6,10 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-/**
- * Created by Zoom on 10/1/2018.
- */
-
 public class DatabaseHelper extends SQLiteOpenHelper {
 
 
