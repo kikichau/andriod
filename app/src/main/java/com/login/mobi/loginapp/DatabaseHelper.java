@@ -70,7 +70,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (cursor != null)
             cursor.moveToFirst();
         if (cursor != null && cursor.getCount() > 0) {
-            diary = new Diary(cursor.getString(1), cursor.getString(2), cursor.getString(3), , cursor.getString(4));
+            diary = new Diary(cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
         }
         // return diary
         return diary;
