@@ -15,7 +15,6 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btSignIn;
     private Button btSignUp;
-    private Button btAddDiary;
     private EditText edtEmail;
     private EditText edtPassword;
 
