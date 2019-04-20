@@ -153,7 +153,50 @@
                 android:textSize="17sp"
                 android:text="Longitude"
                 android:textIsSelectable="true"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:layout_below="@+id/longitudeinput">
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onStartClicked"
+                    android:showText="false"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="@color/colorWhite"
+                    android:textColorHint="@color/colorWhite"
+                    android:textSize="17sp"
+                    android:text="On/Off"/>
+
+                <Button
+                    android:id="@+id/locate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onLocateClicked"
+                    android:text="Locate"
+                    />
+
+                <Button
+                    android:id="@+id/map_frag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onMapFragClicked"
+                    android:text="Map Frag"/>
+
+                <Button
+                    android:id="@+id/map_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onMapViewClicked"
+                    android:text="Map View"/>
+
+            </LinearLayout>
         </RelativeLayout>
+
 
         <ImageView
             android:layout_width="60dp"
