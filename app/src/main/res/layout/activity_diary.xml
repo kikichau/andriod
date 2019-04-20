@@ -23,10 +23,23 @@
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp">
 
+            <TextView
+                android:id="@+id/DateView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="17sp"
+                android:text="Date:"/>
+
             <EditText
                 android:id="@+id/dateinput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/DateView"
+                android:layout_marginTop="0dp"
                 android:backgroundTint="@color/colorWhite"
                 android:fontFamily="sans-serif-light"
                 android:hint="2019-01-01"
@@ -35,33 +48,111 @@
                 android:textColorHint="@color/colorWhite"
                 android:textSize="17sp" />
 
+            <TextView
+                android:id="@+id/TitleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/dateinput"
+                android:layout_marginTop="0dp"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="17sp"
+                android:text="Title:"/>
+
             <EditText
                 android:id="@+id/titleinput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/dateinput"
-                android:layout_marginTop="30dp"
+                android:layout_below="@id/TitleView"
+                android:layout_marginTop="0dp"
                 android:backgroundTint="@color/colorWhite"
                 android:fontFamily="sans-serif-light"
-                android:hint="Title"
+                android:hint="Happy"
                 android:inputType="textShortMessage"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
                 android:textSize="17sp" />
 
+            <TextView
+                android:id="@+id/TextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titleinput"
+                android:layout_marginTop="0dp"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="17sp"
+                android:text="Text:"/>
+
             <EditText
                 android:id="@+id/textinput"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/titleinput"
-                android:layout_marginTop="30dp"
+                android:layout_below="@id/TextView"
+                android:layout_marginTop="0dp"
                 android:backgroundTint="@color/colorWhite"
                 android:fontFamily="sans-serif-light"
-                android:hint="Text"
+                android:hint="Today is a happy day!"
                 android:inputType="textLongMessage"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
                 android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/LatitudeView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textinput"
+                android:layout_marginTop="0dp"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="17sp"
+                android:text="Latitude:"/>
+
+            <TextView
+                android:id="@+id/latitudeViewinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/LatitudeView"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="17sp"
+                android:text="Latitude"
+                android:textIsSelectable="true"/>
+
+            <TextView
+                android:id="@+id/LongitudeView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/latitudeViewinput"
+                android:layout_marginTop="0dp"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="17sp"
+                android:text="Longitude:"/>
+
+            <TextView
+                android:id="@+id/longitudeinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/LongitudeView"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="17sp"
+                android:text="Longitude"
+                android:textIsSelectable="true"/>
         </RelativeLayout>
 
         <ImageView
