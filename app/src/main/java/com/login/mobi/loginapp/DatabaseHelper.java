@@ -63,4 +63,36 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
+    public Diary queryDiary(String date, String title, String address, String text) {
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Diary user = null;
+
+        Cursor cursor = db.query(DatabaseOptions.DIARY_TABLE, new String[]{DatabaseOptions.DID,
+                        DatabaseOptions.DATE, DatabaseOptions.TITLE, DatabaseOptions.ADDRESS, DatabaseOptions.TEXT}, DatabaseOptions.DATE + "=? and " + DatabaseOptions.TITLE + "=?" + DatabaseOptions.ADDRESS + "=?" + DatabaseOptions.TEXT + "=?",
+                new String[]{date, title, address, text}, null, null, null, "1");
+        if (cursor != null)
+            cursor.moveToFirst();
+        if (cursor != null && cursor.getCount() > 0) {
+            diary = new Diary(cursor.getString(1), cursor.getString(2), cursor.getString(3), , cursor.getString(4));
+        }
+        // return diary
+        return diary;
+    }
+
+    public void addDiary(Diary diary) {
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(DatabaseOptions.DATE, diary.getDate());
+        values.put(DatabaseOptions.TITLE, diary.getTitle());
+        values.put(DatabaseOptions.ADDRESS, diary.getAddress());
+        values.put(DatabaseOptions.TEXT, diary.getText());
+
+        // Inserting Row
+        db.insert(DatabaseOptions.USERS_TABLE, null, values);
+        db.close(); // Closing database connection
+
+    }
+
 }
