@@ -62,7 +62,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public Diary queryDiary(String date, String title, String address, String text) {
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Diary user = null;
+        Diary diary = null;
 
         Cursor cursor = db.query(DatabaseOptions.DIARY_TABLE, new String[]{DatabaseOptions.DID,
                         DatabaseOptions.DATE, DatabaseOptions.TITLE, DatabaseOptions.ADDRESS, DatabaseOptions.TEXT}, DatabaseOptions.DATE + "=? and " + DatabaseOptions.TITLE + "=?" + DatabaseOptions.ADDRESS + "=?" + DatabaseOptions.TEXT + "=?",
