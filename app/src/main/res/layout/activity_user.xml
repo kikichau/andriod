@@ -31,24 +31,6 @@
                 android:text="Diary"
                 android:textColor="@android:color/darker_gray"
                 android:textSize="24sp" />
-
-            <TextView
-                android:id="@+id/labelMake"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="19dp"
-                android:layout_marginTop="10dp"
-                android:width="80dp"
-                android:text="Make:"
-                android:textAppearance="?android:attr/textAppearanceSmall" />
-
-            <EditText
-                android:id="@+id/inputMake"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="19dp"
-                android:layout_marginRight="20dp"
-                android:hint="e.g. BMW" />
         </TableRow>
 
     </RelativeLayout>
