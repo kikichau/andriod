@@ -181,13 +181,6 @@
                     />
 
                 <Button
-                    android:id="@+id/map_frag"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:onClick="onMapFragClicked"
-                    android:text="Map Frag"/>
-
-                <Button
                     android:id="@+id/map_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

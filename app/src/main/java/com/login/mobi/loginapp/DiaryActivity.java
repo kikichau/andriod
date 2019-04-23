@@ -36,7 +36,6 @@ public class DiaryActivity extends AppCompatActivity implements GoogleApiClient.
     protected TextView mLongitudeText;
     protected TextView mOutput;
     protected Button mLocateButton;
-    protected Button mMapFragButton;
     protected Button mMapViewButton;
     protected GoogleApiClient mGoogleApiClient;
     protected LocationRequest mLocationRequest;
@@ -55,14 +54,12 @@ public class DiaryActivity extends AppCompatActivity implements GoogleApiClient.
         mLatitudeText = (TextView) findViewById((R.id.latitudeinput));
         mLongitudeText = (TextView) findViewById((R.id.longitudeinput));
         mLocateButton = (Button) findViewById(R.id.locate);
-        mMapFragButton = (Button) findViewById(R.id.map_frag);
         mMapViewButton = (Button) findViewById(R.id.map_view);
         mOutput = (TextView) findViewById((R.id.output));
 
         mLatitudeText.setText("Latitude not available yet");
         mLongitudeText.setText("Longitude not available yet");
         mLocateButton.setEnabled(false);
-        mMapFragButton.setEnabled(false);
         mMapViewButton.setEnabled(false);
         mOutput.setText("");
 
@@ -130,13 +127,11 @@ public class DiaryActivity extends AppCompatActivity implements GoogleApiClient.
         if (!mGoogleApiClient.isConnected()) {
             mGoogleApiClient.connect();
             mLocateButton.setEnabled(true);
-            mMapFragButton.setEnabled(true);
             mMapViewButton.setEnabled(true);
             mOutput.setText("GoogleApiClient has started. You can see the location icon in status bar");
         } else {
             mGoogleApiClient.disconnect();
             mLocateButton.setEnabled(false);
-            mMapFragButton.setEnabled(false);
             mMapViewButton.setEnabled(false);
             mOutput.setText("GoogleApiClient has stopped. Location icon in status has gone.");
         }
