@@ -206,7 +206,7 @@
             android:src="@drawable/ic_google_white" />
 
         <Button
-            android:id="@+id/btSignUp"
+            android:id="@+id/btAddDiary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
