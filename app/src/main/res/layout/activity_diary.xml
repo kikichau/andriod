@@ -155,53 +155,53 @@
                 android:textIsSelectable="true"/>
 
             <LinearLayout
+                android:id="@+id/switchbutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@+id/longitudeinput"
                 android:layout_marginTop="30dp"
-                android:orientation="horizontal"
-                android:layout_below="@+id/longitudeinput">
+                android:orientation="horizontal">
 
                 <Switch
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
                     android:onClick="onStartClicked"
                     android:showText="false"
-                    android:fontFamily="sans-serif-light"
+                    android:text="On/Off"
                     android:textColor="@color/colorWhite"
                     android:textColorHint="@color/colorWhite"
-                    android:textSize="17sp"
-                    android:text="On/Off"/>
+                    android:textSize="17sp" />
 
                 <Button
                     android:id="@+id/locate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onLocateClicked"
-                    android:text="Locate"
-                    />
+                    android:text="Locate" />
 
                 <Button
                     android:id="@+id/map_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onMapViewClicked"
-                    android:text="Map View"/>
-
+                    android:text="Map View" />
             </LinearLayout>
-
             <View
+                android:id="@+id/view"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="230dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_below="@id/switchbutton"
+                android:background="@android:color/white" />
 
             <TextView
                 android:id="@+id/output"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="240dp"
+                android:layout_height="150dp"
+                android:layout_below="@id/view"
+                android:layout_marginTop="30dp"
                 android:gravity="top"
-                android:text="output area"/>
+                android:text="output area" />
         </RelativeLayout>
 
 
