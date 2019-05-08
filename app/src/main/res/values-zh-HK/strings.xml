@@ -13,7 +13,7 @@
     <string name="address">地址</string>
     <string name="onoff">開/關</string>
     <string name="locate">定位</string>
-    <string name="mapview">地圖顯視</string>
+    <string name="mapview">地圖顯示</string>
     <string name="adddiary">加入日記</string>
     <string name="diary">日記</string>
 </resources>
