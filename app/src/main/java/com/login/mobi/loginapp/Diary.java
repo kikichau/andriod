@@ -1,17 +1,27 @@
 package com.login.mobi.loginapp;
 
 public class Diary {
+    private String uid;
     private int did;
     private String date;
     private  String title;
     private String address;
     private String text;
 
-    public Diary(String date, String title, String address, String text) {
+    public Diary(String uid, String date, String title, String address, String text) {
+        this.uid = uid;
         this.date = date;
         this.title = title;
         this.address = address;
         this.text = text;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public int getDid() {
@@ -57,6 +67,7 @@ public class Diary {
     @Override
     public String toString() {
         return "User{" +
+                "uid=" + uid + '\'' +
                 "did=" + did +
                 ", date='" + date + '\'' +
                 ", title='" + title + '\'' +

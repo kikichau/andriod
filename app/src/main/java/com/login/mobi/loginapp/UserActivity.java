@@ -10,6 +10,7 @@ import android.widget.TextView;
 public class UserActivity extends AppCompatActivity {
     private TextView tvUser;
     private Button btDiaryIn;
+    private TextView allDiary;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +19,15 @@ public class UserActivity extends AppCompatActivity {
 
         tvUser = findViewById(R.id.tvUser);
         btDiaryIn = findViewById(R.id.btDiaryIn);
+        allDiary = findViewById(R.id.allDiary);
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             tvUser.setText(bundle.getString("user"));
+        }
+
+        if (bundle != null) {
+            allDiary.setText(bundle.getString("diary"));
         }
 
         btDiaryIn.setOnClickListener(new View.OnClickListener() {

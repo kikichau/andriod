@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/girl"
-    tools:context="com.login.mobi.loginapp.MainActivity">
+    tools:context="com.login.mobi.loginapp.DiaryActivity">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
                 android:textSize="17sp"
-                android:text="Date:"/>
+                android:text="@string/date"/>
 
             <EditText
                 android:id="@+id/dateinput"
@@ -59,7 +59,7 @@
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
                 android:textSize="17sp"
-                android:text="Title:"/>
+                android:text="@string/title"/>
 
             <EditText
                 android:id="@+id/titleinput"
@@ -86,7 +86,7 @@
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
                 android:textSize="17sp"
-                android:text="Text:"/>
+                android:text="@string/text"/>
 
             <EditText
                 android:id="@+id/textinput"
@@ -113,7 +113,7 @@
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
                 android:textSize="17sp"
-                android:text="Latitude:"/>
+                android:text="@string/latitude"/>
 
             <TextView
                 android:id="@+id/latitudeinput"
@@ -139,7 +139,7 @@
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
                 android:textSize="17sp"
-                android:text="Longitude:"/>
+                android:text="@string/longitude"/>
 
             <TextView
                 android:id="@+id/longitudeinput"
@@ -168,7 +168,7 @@
                     android:fontFamily="sans-serif-light"
                     android:onClick="onStartClicked"
                     android:showText="false"
-                    android:text="On/Off"
+                    android:text="@string/onoff"
                     android:textColor="@color/colorWhite"
                     android:textColorHint="@color/colorWhite"
                     android:textSize="17sp" />
@@ -178,14 +178,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onLocateClicked"
-                    android:text="Locate" />
+                    android:text="@string/locate" />
 
                 <Button
                     android:id="@+id/map_view"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:onClick="onMapViewClicked"
-                    android:text="Map View" />
+                    android:text="@string/mapview" />
             </LinearLayout>
             <View
                 android:id="@+id/view"
@@ -195,13 +195,13 @@
                 android:background="@android:color/white" />
 
             <TextView
-                android:id="@+id/output"
+                android:id="@+id/addressinput"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_below="@id/view"
                 android:layout_marginTop="30dp"
                 android:gravity="top"
-                android:text="output area" />
+                android:text="@string/address" />
         </RelativeLayout>
 
 
@@ -221,7 +221,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/button_red"
-            android:text="Add Diary"
+            android:text="@string/adddiary"
             android:textColor="@color/colorWhite" />
     </RelativeLayout>
 

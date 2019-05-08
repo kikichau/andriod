@@ -10,7 +10,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:stretchColumns="1">
+        android:stretchColumns="1"
+        tools:layout_editor_absoluteX="273dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <View
             android:layout_width="match_parent"
@@ -19,6 +21,7 @@
             android:background="@drawable/gradient_bg" />
 
         <TableRow
+            android:id="@+id/tableRow"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -28,9 +31,12 @@
                 android:layout_height="wrap_content"
                 android:layout_column="0"
                 android:layout_span="2"
-                android:text="Diary"
-                android:textColor="@android:color/darker_gray"
-                android:textSize="24sp" />
+                android:text="@string/diary"
+                android:textAlignment="center"
+                android:textAllCaps="false"
+                android:textColor="@color/colorWhite"
+                android:textSize="30sp"
+                android:textStyle="bold" />
         </TableRow>
 
         <Button
@@ -38,9 +44,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_marginBottom="20dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/button_red"
             android:text="Diary In"
             android:textColor="@color/colorWhite" />
@@ -52,7 +58,18 @@
         android:id="@+id/tvUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
+        android:layout_marginTop="50dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/allDiary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="parent"

@@ -29,7 +29,7 @@
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/colorWhite"
                 android:fontFamily="sans-serif-light"
-                android:hint="Email"
+                android:hint="@string/email"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
@@ -43,7 +43,7 @@
                 android:layout_marginTop="30dp"
                 android:backgroundTint="@color/colorWhite"
                 android:fontFamily="sans-serif-light"
-                android:hint="Password"
+                android:hint="@string/password"
                 android:inputType="textPassword"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
@@ -51,11 +51,20 @@
         </RelativeLayout>
 
         <ImageView
+            android:id="@+id/ivg"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:src="@drawable/ic_google_white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/ivg"
+            android:layout_marginTop="30dp"
+            android:text="@string/hello_message"/>
 
         <Button
             android:id="@+id/btSignIn"
@@ -66,7 +75,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/button_white"
-            android:text="Sign In"
+            android:text="@string/signin"
             android:textColor="@color/colorPrimary" />
 
         <Button
@@ -78,7 +87,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             android:background="@drawable/button_red"
-            android:text="Sign Up"
+            android:text="@string/signup"
             android:textColor="@color/colorWhite" />
     </RelativeLayout>
 

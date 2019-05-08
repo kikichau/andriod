@@ -12,10 +12,13 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -41,6 +44,12 @@ public class DiaryActivity extends AppCompatActivity implements GoogleApiClient.
     protected LocationRequest mLocationRequest;
     protected Geocoder mGeocoder;
 
+    private Button btAddDiary;
+    private String edUser;
+    private EditText edDate;
+    private EditText edTitle;
+    private EditText edText;
+
     public static void setOnCurrentLocationChangeListener(OnCurrentLocationChangeListener
                                                                   mOnCurrentLocationChangeListener) {
         DiaryActivity.mOnCurrentLocationChangeListener = mOnCurrentLocationChangeListener;
@@ -51,11 +60,17 @@ public class DiaryActivity extends AppCompatActivity implements GoogleApiClient.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_diary);
 
+        btAddDiary = findViewById(R.id.btAddDiary);
+
+        edDate = findViewById(R.id.dateinput);
+        edTitle = findViewById(R.id.titleinput);
+        edText = findViewById(R.id.textinput);
+
         mLatitudeText = (TextView) findViewById((R.id.latitudeinput));
         mLongitudeText = (TextView) findViewById((R.id.longitudeinput));
         mLocateButton = (Button) findViewById(R.id.locate);
         mMapViewButton = (Button) findViewById(R.id.map_view);
-        mOutput = (TextView) findViewById((R.id.output));
+        mOutput = (TextView) findViewById((R.id.addressinput));
 
         mLatitudeText.setText("Latitude not available yet");
         mLongitudeText.setText("Longitude not available yet");
@@ -73,6 +88,37 @@ public class DiaryActivity extends AppCompatActivity implements GoogleApiClient.
         mLocationRequest.setInterval(10000);
         mLocationRequest.setFastestInterval(5000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
+
+        final DatabaseHelper dbHelper = new DatabaseHelper(this);
+
+        btAddDiary.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (!emptyValidation()) {
+                    Bundle bundle = getIntent().getExtras();
+                    if (bundle != null)
+                        edUser = bundle.getString("user");
+                    dbHelper.addDiary(new Diary(edUser.toString(), edDate.getText().toString(), edTitle.getText().toString(), edText.getText().toString(), mOutput.getText().toString()));
+                    Toast.makeText(DiaryActivity.this, "Added Diary", Toast.LENGTH_SHORT).show();
+                    edDate.setText("");
+                    edTitle.setText("");
+                    edText.setText("");
+                    mOutput.setText("");
+                    Intent intent = new Intent(DiaryActivity.this, UserActivity.class);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(DiaryActivity.this, "Empty Fields", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
+    private boolean emptyValidation() {
+        if (TextUtils.isEmpty(edUser.toString()) || TextUtils.isEmpty(edDate.getText().toString()) || TextUtils.isEmpty(edTitle.getText().toString()) || TextUtils.isEmpty(edText.getText().toString()) || TextUtils.isEmpty(mOutput.getText().toString()) ) {
+            return true;
+        }else {
+            return false;
+        }
     }
 
     @Override
@@ -161,10 +207,6 @@ public class DiaryActivity extends AppCompatActivity implements GoogleApiClient.
         } catch (Exception e) {
             mOutput.setText("WARNING! Geocoder.getFromLocation() didn't work!");
         }
-    }
-
-    public void onMapFragClicked(View v) {
-        startActivity(new Intent(this, MapFragActivity.class));
     }
 
     public void onMapViewClicked(View v) {

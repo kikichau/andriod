@@ -46,6 +46,23 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return user;
     }
 
+    public Diary queryDiary(String uid, String date, String title, String text, String address) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Diary diary = null;
+
+        Cursor cursor = db.query(DatabaseOptions.DIARY_TABLE, new String[] {
+                DatabaseOptions.UID, DatabaseOptions.DID, DatabaseOptions.DATE, DatabaseOptions.TITLE, DatabaseOptions.TEXT, DatabaseOptions.ADDRESS
+        }, DatabaseOptions.UID + "=? and" + DatabaseOptions.DATE + "=? and" + DatabaseOptions.TITLE + "=? and" + DatabaseOptions.TEXT + "=? and" + DatabaseOptions.ADDRESS + "=?",
+                new String[] {uid, date, title, text, address}, null, null, null, "1");
+        if (cursor != null)
+            cursor.moveToFirst();
+        if (cursor != null && cursor.getCount() > 0) {
+            diary = new Diary(cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
+        }
+        // return diary
+        return diary;
+    }
+
     public void addUser(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -59,36 +76,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     }
 
-    public Diary queryDiary(String date, String title, String address, String text) {
-
-        SQLiteDatabase db = this.getReadableDatabase();
-        Diary diary = null;
-
-        Cursor cursor = db.query(DatabaseOptions.DIARY_TABLE, new String[]{DatabaseOptions.DID,
-                        DatabaseOptions.DATE, DatabaseOptions.TITLE, DatabaseOptions.ADDRESS, DatabaseOptions.TEXT}, DatabaseOptions.DATE + "=? and " + DatabaseOptions.TITLE + "=?" + DatabaseOptions.ADDRESS + "=?" + DatabaseOptions.TEXT + "=?",
-                new String[]{date, title, address, text}, null, null, null, "1");
-        if (cursor != null)
-            cursor.moveToFirst();
-        if (cursor != null && cursor.getCount() > 0) {
-            diary = new Diary(cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
-        }
-        // return diary
-        return diary;
-    }
-
     public void addDiary(Diary diary) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
+        values.put(DatabaseOptions.UID, diary.getUid());
         values.put(DatabaseOptions.DATE, diary.getDate());
         values.put(DatabaseOptions.TITLE, diary.getTitle());
-        values.put(DatabaseOptions.ADDRESS, diary.getAddress());
         values.put(DatabaseOptions.TEXT, diary.getText());
+        values.put(DatabaseOptions.ADDRESS, diary.getAddress());
 
         // Inserting Row
-        db.insert(DatabaseOptions.USERS_TABLE, null, values);
+        db.insert(DatabaseOptions.DIARY_TABLE, null, values);
         db.close(); // Closing database connection
-
     }
-
-}
+    }

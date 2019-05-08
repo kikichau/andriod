@@ -1,4 +1,20 @@
 <resources>
     <string name="app_name">Mobi</string>
     <string name="title_activity_map_view">Map</string>
+    <string name="hello_message">Hello!</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="signin">Sign In</string>
+    <string name="signup">Sign Up</string>
+    <string name="date">Date:</string>
+    <string name="title">Title:</string>
+    <string name="text">Text:</string>
+    <string name="latitude">Latitude:</string>
+    <string name="longitude">Longitude:</string>
+    <string name="address">Address</string>
+    <string name="onoff">On/Off</string>
+    <string name="locate">Locate</string>
+    <string name="mapview">Map View</string>
+    <string name="adddiary">Add Diary</string>
+    <string name="diary">Diary</string>
 </resources>

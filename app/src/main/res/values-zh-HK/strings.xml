@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello_message">歡迎!</string>
+    <string name="email">電郵</string>
+    <string name="password">密碼</string>
+    <string name="signin">登入</string>
+    <string name="signup">註冊</string>
+    <string name="date">日期:</string>
+    <string name="title">題目:</string>
+    <string name="text">文字:</string>
+    <string name="latitude">緯度:</string>
+    <string name="longitude">經度:</string>
+    <string name="address">地址</string>
+    <string name="onoff">開/關</string>
+    <string name="locate">定位</string>
+    <string name="mapview">地圖顯視</string>
+    <string name="adddiary">加入日記</string>
+    <string name="diary">日記</string>
+</resources>
