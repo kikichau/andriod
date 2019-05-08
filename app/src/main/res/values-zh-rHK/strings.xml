@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">日記</string>
+    <string name="title_activity_map_view">地圖</string>
     <string name="hello_message">歡迎!</string>
     <string name="email">電郵</string>
     <string name="password">密碼</string>
