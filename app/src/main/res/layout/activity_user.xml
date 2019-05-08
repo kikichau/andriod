@@ -39,6 +39,14 @@
                 android:textStyle="bold" />
         </TableRow>
 
+        <ListView
+            android:id="@+id/diarylist"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="100dp"
+            android:textColor="@color/colorWhite"></ListView>
+
         <Button
             android:id="@+id/btDiaryIn"
             android:layout_width="match_parent"
@@ -48,9 +56,8 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
             android:background="@drawable/button_red"
-            android:text="Diary In"
+            android:text="@string/adddiary"
             android:textColor="@color/colorWhite" />
-
     </RelativeLayout>
 
 
@@ -59,17 +66,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/allDiary"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="parent"

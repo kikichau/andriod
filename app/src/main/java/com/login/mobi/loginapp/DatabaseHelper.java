@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.ArrayList;
+
 public class DatabaseHelper extends SQLiteOpenHelper {
 
 
@@ -46,23 +48,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return user;
     }
 
-    public Diary queryDiary(String uid, String date, String title, String text, String address) {
-        SQLiteDatabase db = this.getReadableDatabase();
-        Diary diary = null;
-
-        Cursor cursor = db.query(DatabaseOptions.DIARY_TABLE, new String[] {
-                DatabaseOptions.UID, DatabaseOptions.DID, DatabaseOptions.DATE, DatabaseOptions.TITLE, DatabaseOptions.TEXT, DatabaseOptions.ADDRESS
-        }, DatabaseOptions.UID + "=? and" + DatabaseOptions.DATE + "=? and" + DatabaseOptions.TITLE + "=? and" + DatabaseOptions.TEXT + "=? and" + DatabaseOptions.ADDRESS + "=?",
-                new String[] {uid, date, title, text, address}, null, null, null, "1");
-        if (cursor != null)
-            cursor.moveToFirst();
-        if (cursor != null && cursor.getCount() > 0) {
-            diary = new Diary(cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4), cursor.getString(5));
-        }
-        // return diary
-        return diary;
-    }
-
     public void addUser(User user) {
         SQLiteDatabase db = this.getWritableDatabase();
 
@@ -80,7 +65,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
-        values.put(DatabaseOptions.UID, diary.getUid());
         values.put(DatabaseOptions.DATE, diary.getDate());
         values.put(DatabaseOptions.TITLE, diary.getTitle());
         values.put(DatabaseOptions.TEXT, diary.getText());
@@ -90,4 +74,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.insert(DatabaseOptions.DIARY_TABLE, null, values);
         db.close(); // Closing database connection
     }
+
+    public Cursor getAllDiary() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        String quary = "Select * from " + DatabaseOptions.DIARY_TABLE;
+        Cursor cursor = db.rawQuery(quary, null);
+
+        return cursor;
     }
+}

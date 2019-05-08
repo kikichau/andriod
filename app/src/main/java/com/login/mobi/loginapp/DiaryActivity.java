@@ -45,10 +45,10 @@ public class DiaryActivity extends AppCompatActivity implements GoogleApiClient.
     protected Geocoder mGeocoder;
 
     private Button btAddDiary;
-    private String edUser;
     private EditText edDate;
     private EditText edTitle;
     private EditText edText;
+    private EditText edAddress;
 
     public static void setOnCurrentLocationChangeListener(OnCurrentLocationChangeListener
                                                                   mOnCurrentLocationChangeListener) {
@@ -65,12 +65,13 @@ public class DiaryActivity extends AppCompatActivity implements GoogleApiClient.
         edDate = findViewById(R.id.dateinput);
         edTitle = findViewById(R.id.titleinput);
         edText = findViewById(R.id.textinput);
+        edAddress = findViewById(R.id.addressinput);
 
         mLatitudeText = (TextView) findViewById((R.id.latitudeinput));
         mLongitudeText = (TextView) findViewById((R.id.longitudeinput));
         mLocateButton = (Button) findViewById(R.id.locate);
         mMapViewButton = (Button) findViewById(R.id.map_view);
-        mOutput = (TextView) findViewById((R.id.addressinput));
+        mOutput = (TextView) findViewById((R.id.address));
 
         mLatitudeText.setText("Latitude not available yet");
         mLongitudeText.setText("Longitude not available yet");
@@ -95,17 +96,15 @@ public class DiaryActivity extends AppCompatActivity implements GoogleApiClient.
             @Override
             public void onClick(View v) {
                 if (!emptyValidation()) {
-                    Bundle bundle = getIntent().getExtras();
-                    if (bundle != null)
-                        edUser = bundle.getString("user");
-                    dbHelper.addDiary(new Diary(edUser.toString(), edDate.getText().toString(), edTitle.getText().toString(), edText.getText().toString(), mOutput.getText().toString()));
+                    dbHelper.addDiary(new Diary(edDate.getText().toString(), edTitle.getText().toString(), edText.getText().toString(), edAddress.getText().toString()));
                     Toast.makeText(DiaryActivity.this, "Added Diary", Toast.LENGTH_SHORT).show();
                     edDate.setText("");
                     edTitle.setText("");
                     edText.setText("");
-                    mOutput.setText("");
+                    edAddress.setText("");
                     Intent intent = new Intent(DiaryActivity.this, UserActivity.class);
                     startActivity(intent);
+
                 }else{
                     Toast.makeText(DiaryActivity.this, "Empty Fields", Toast.LENGTH_SHORT).show();
                 }
@@ -114,7 +113,7 @@ public class DiaryActivity extends AppCompatActivity implements GoogleApiClient.
     }
 
     private boolean emptyValidation() {
-        if (TextUtils.isEmpty(edUser.toString()) || TextUtils.isEmpty(edDate.getText().toString()) || TextUtils.isEmpty(edTitle.getText().toString()) || TextUtils.isEmpty(edText.getText().toString()) || TextUtils.isEmpty(mOutput.getText().toString()) ) {
+        if (TextUtils.isEmpty(edDate.getText().toString()) || TextUtils.isEmpty(edTitle.getText().toString()) || TextUtils.isEmpty(edText.getText().toString()) || TextUtils.isEmpty(edAddress.getText().toString()) ) {
             return true;
         }else {
             return false;

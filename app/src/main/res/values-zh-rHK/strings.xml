@@ -18,4 +18,5 @@
     <string name="mapview">地圖顯示</string>
     <string name="adddiary">加入日記</string>
     <string name="diary">日記</string>
+    <string name="alldiary">所有日記</string>
 </resources>

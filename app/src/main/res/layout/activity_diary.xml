@@ -69,7 +69,7 @@
                 android:layout_marginTop="0dp"
                 android:backgroundTint="@color/colorWhite"
                 android:fontFamily="sans-serif-light"
-                android:hint="Happy"
+                android:hint="@string/title"
                 android:inputType="textShortMessage"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
@@ -96,7 +96,7 @@
                 android:layout_marginTop="0dp"
                 android:backgroundTint="@color/colorWhite"
                 android:fontFamily="sans-serif-light"
-                android:hint="Today is a happy day!"
+                android:hint="@string/text"
                 android:inputType="textLongMessage"
                 android:textColor="@color/colorWhite"
                 android:textColorHint="@color/colorWhite"
@@ -154,12 +154,39 @@
                 android:text="Longitude"
                 android:textIsSelectable="true"/>
 
+            <TextView
+                android:id="@+id/AddressView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/longitudeinput"
+                android:layout_marginTop="0dp"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="17sp"
+                android:text="@string/address"/>
+
+            <EditText
+                android:id="@+id/addressinput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/AddressView"
+                android:layout_marginTop="0dp"
+                android:backgroundTint="@color/colorWhite"
+                android:fontFamily="sans-serif-light"
+                android:hint="@string/address"
+                android:inputType="textLongMessage"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="@color/colorWhite"
+                android:textSize="17sp" />
+
             <LinearLayout
                 android:id="@+id/switchbutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/longitudeinput"
-                android:layout_marginTop="30dp"
+                android:layout_below="@+id/addressinput"
+                android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
                 <Switch
@@ -195,11 +222,11 @@
                 android:background="@android:color/white" />
 
             <TextView
-                android:id="@+id/addressinput"
+                android:id="@+id/address"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:layout_below="@id/view"
-                android:layout_marginTop="30dp"
+                android:layout_marginTop="0dp"
                 android:gravity="top"
                 android:text="@string/address" />
         </RelativeLayout>
